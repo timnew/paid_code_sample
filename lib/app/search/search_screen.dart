@@ -4,7 +4,7 @@ import 'package:paid_code_test/features/find_service.dart';
 import 'package:provider/provider.dart';
 
 import 'search_field.dart';
-import 'search_result.dart';
+import 'sliver_search_result.dart';
 import 'search_store.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -27,15 +27,10 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) => Provider.value(
         value: _store,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text("News Search"),
-          ),
-          body: _ScreenLayout(
-            searchField: const SearchField(),
-            searchResult: Observer(
-              builder: (_) => SearchResult(state: _store.state),
-            ),
+        child: _ScreenLayout(
+          searchField: const SearchField(),
+          sliverSearchResult: Observer(
+            builder: (_) => SliverSearchResult(state: _store.state),
           ),
         ),
       );
@@ -43,26 +38,30 @@ class _SearchScreenState extends State<SearchScreen> {
 
 class _ScreenLayout extends StatelessWidget {
   final Widget searchField;
-  final Widget searchResult;
+  final Widget sliverSearchResult;
 
   const _ScreenLayout({
     required this.searchField,
-    required this.searchResult,
+    required this.sliverSearchResult,
   });
 
   @override
-  Widget build(BuildContext context) => Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            child: searchField,
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: searchResult,
+  Widget build(BuildContext context) => Scaffold(
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              title: const Text('Search'),
+              floating: true,
+              snap: true,
             ),
-          ),
-        ],
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                child: searchField,
+              ),
+            ),
+            sliverSearchResult,
+          ],
+        ),
       );
 }

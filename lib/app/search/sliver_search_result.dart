@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:paid_code_test/features/app_exception.dart';
 import 'package:provider/provider.dart';
 
-import 'search_result_list_view.dart';
 import 'search_state.dart';
 import 'search_store.dart';
+import 'sliver_search_result_list_view.dart';
 
-class SearchResult extends StatelessWidget {
+class SliverSearchResult extends StatelessWidget {
   final SearchState state;
-  const SearchResult({required this.state});
+  const SliverSearchResult({required this.state});
 
   @override
-  Widget build(BuildContext context) => Observer(
-        builder: (BuildContext context) => state.when(
-          initial: () => const _FullScreenMessage(
+  Widget build(BuildContext context) => state.when(
+        initial: () => const SliverToBoxAdapter(
+          child: _FullScreenMessage(
             message: "Type keywords to trigger a search",
           ),
-          loadingFirstPage: (_) => const _FullScreenLoading(),
-          noResult: (query) => _FullScreenMessage(
+        ),
+        loadingFirstPage: (_) => const SliverToBoxAdapter(child: _FullScreenLoading()),
+        noResult: (query) => SliverToBoxAdapter(
+          child: _FullScreenMessage(
             message: "No articles found about ${query.keywords}",
           ),
-          failedOnFirstPage: (query, exception) => AppExceptionWidget(
+        ),
+        failedOnFirstPage: (query, exception) => SliverToBoxAdapter(
+          child: AppExceptionWidget(
             exception: exception,
             onRetry: () => context.read<SearchStore>().retryFirstQuery(),
           ),
-          loaded: (_, articles, nextPageState) => SearchResultListView(
-            articles: articles,
-            nextPageState: nextPageState,
-          ),
+        ),
+        loaded: (_, articles, nextPageState) => SliverSearchResultListView(
+          articles: articles,
+          nextPageState: nextPageState,
         ),
       );
 }

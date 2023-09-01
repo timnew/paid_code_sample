@@ -8,18 +8,18 @@ import 'package:provider/provider.dart';
 import 'article_item.dart';
 import 'search_state.dart';
 
-class SearchResultListView extends StatelessWidget {
+class SliverSearchResultListView extends StatelessWidget {
   final List<ArticleEntry> articles;
   final NextPageState nextPageState;
 
-  const SearchResultListView({
+  const SliverSearchResultListView({
     super.key,
     required this.articles,
     required this.nextPageState,
   });
 
   @override
-  Widget build(BuildContext context) => ListView.builder(
+  Widget build(BuildContext context) => SliverList.builder(
         itemCount: articles.length + 1,
         itemBuilder: (context, index) => index == articles.length
             ? _buildNextPageState(context)
