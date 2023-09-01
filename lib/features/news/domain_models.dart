@@ -15,3 +15,18 @@ class ArticleEntry with _$ArticleEntry {
     required String summary,
   }) = _ArticleEntry;
 }
+
+@freezed
+class SearchQuery with _$SearchQuery {
+  static const SearchQuery empty = SearchQuery(keywords: '');
+
+  const SearchQuery._();
+
+  const factory SearchQuery({
+    required String keywords,
+    @Default(1) int page,
+    @Default(20) int pageSize,
+  }) = _SearchQuery;
+
+  SearchQuery queryNextPage() => copyWith(page: page + 1);
+}

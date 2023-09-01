@@ -19,17 +19,13 @@ class NewsRepository {
   }) =>
       NewsRepository(NewsApi(dio), apiKey);
 
-  Future<List<ArticleEntry>> searchNews(
-    String query, {
-    int? page,
-    int pageSize = 20,
-  }) async {
+  Future<List<ArticleEntry>> searchNews(SearchQuery query) async {
     final response = await _api
         .getEverything(
           apiKey: _apiKey,
-          query: query,
-          page: page,
-          pageSize: pageSize,
+          query: query.keywords,
+          page: query.page,
+          pageSize: query.pageSize,
         )
         .wrapException('searching news', logger: _logger);
 

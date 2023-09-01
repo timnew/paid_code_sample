@@ -278,3 +278,162 @@ abstract class _ArticleEntry implements ArticleEntry {
   _$$_ArticleEntryCopyWith<_$_ArticleEntry> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SearchQuery {
+  String get keywords => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
+  int get pageSize => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SearchQueryCopyWith<SearchQuery> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SearchQueryCopyWith<$Res> {
+  factory $SearchQueryCopyWith(
+          SearchQuery value, $Res Function(SearchQuery) then) =
+      _$SearchQueryCopyWithImpl<$Res, SearchQuery>;
+  @useResult
+  $Res call({String keywords, int page, int pageSize});
+}
+
+/// @nodoc
+class _$SearchQueryCopyWithImpl<$Res, $Val extends SearchQuery>
+    implements $SearchQueryCopyWith<$Res> {
+  _$SearchQueryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keywords = null,
+    Object? page = null,
+    Object? pageSize = null,
+  }) {
+    return _then(_value.copyWith(
+      keywords: null == keywords
+          ? _value.keywords
+          : keywords // ignore: cast_nullable_to_non_nullable
+              as String,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSize: null == pageSize
+          ? _value.pageSize
+          : pageSize // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_SearchQueryCopyWith<$Res>
+    implements $SearchQueryCopyWith<$Res> {
+  factory _$$_SearchQueryCopyWith(
+          _$_SearchQuery value, $Res Function(_$_SearchQuery) then) =
+      __$$_SearchQueryCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String keywords, int page, int pageSize});
+}
+
+/// @nodoc
+class __$$_SearchQueryCopyWithImpl<$Res>
+    extends _$SearchQueryCopyWithImpl<$Res, _$_SearchQuery>
+    implements _$$_SearchQueryCopyWith<$Res> {
+  __$$_SearchQueryCopyWithImpl(
+      _$_SearchQuery _value, $Res Function(_$_SearchQuery) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? keywords = null,
+    Object? page = null,
+    Object? pageSize = null,
+  }) {
+    return _then(_$_SearchQuery(
+      keywords: null == keywords
+          ? _value.keywords
+          : keywords // ignore: cast_nullable_to_non_nullable
+              as String,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSize: null == pageSize
+          ? _value.pageSize
+          : pageSize // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchQuery extends _SearchQuery {
+  const _$_SearchQuery(
+      {required this.keywords, this.page = 1, this.pageSize = 20})
+      : super._();
+
+  @override
+  final String keywords;
+  @override
+  @JsonKey()
+  final int page;
+  @override
+  @JsonKey()
+  final int pageSize;
+
+  @override
+  String toString() {
+    return 'SearchQuery(keywords: $keywords, page: $page, pageSize: $pageSize)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SearchQuery &&
+            (identical(other.keywords, keywords) ||
+                other.keywords == keywords) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.pageSize, pageSize) ||
+                other.pageSize == pageSize));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, keywords, page, pageSize);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SearchQueryCopyWith<_$_SearchQuery> get copyWith =>
+      __$$_SearchQueryCopyWithImpl<_$_SearchQuery>(this, _$identity);
+}
+
+abstract class _SearchQuery extends SearchQuery {
+  const factory _SearchQuery(
+      {required final String keywords,
+      final int page,
+      final int pageSize}) = _$_SearchQuery;
+  const _SearchQuery._() : super._();
+
+  @override
+  String get keywords;
+  @override
+  int get page;
+  @override
+  int get pageSize;
+  @override
+  @JsonKey(ignore: true)
+  _$$_SearchQueryCopyWith<_$_SearchQuery> get copyWith =>
+      throw _privateConstructorUsedError;
+}
