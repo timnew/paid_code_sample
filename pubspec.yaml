@@ -37,6 +37,7 @@ dependencies:
 
   # Util
   collection: ^1.17.2
+  intl: ^0.18.1
 
 dev_dependencies:
   # Test
