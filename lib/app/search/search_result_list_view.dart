@@ -5,6 +5,7 @@ import 'package:paid_code_test/features/news.dart';
 import 'package:paid_code_test/features/widgets.dart';
 import 'package:provider/provider.dart';
 
+import 'article_item.dart';
 import 'search_state.dart';
 
 class SearchResultListView extends StatelessWidget {
@@ -22,7 +23,7 @@ class SearchResultListView extends StatelessWidget {
         itemCount: articles.length + 1,
         itemBuilder: (context, index) => index == articles.length
             ? _buildNextPageState(context)
-            : ArticleItemView(article: articles[index]),
+            : ArticleItem(article: articles[index]),
       );
 
   Widget _buildNextPageState(BuildContext context) => nextPageState.when(
@@ -30,20 +31,6 @@ class SearchResultListView extends StatelessWidget {
         noMorePage: () => const _NoMorePageMessage(),
         loading: () => const _LoadingNextPageIndicator(),
         failed: (exception) => _LoadingNextPageError(exception: exception),
-      );
-}
-
-class ArticleItemView extends StatelessWidget {
-  final ArticleEntry article;
-
-  const ArticleItemView({
-    super.key,
-    required this.article,
-  });
-
-  @override
-  Widget build(BuildContext context) => ListTile(
-        title: Text(article.title),
       );
 }
 
@@ -68,7 +55,7 @@ class _LoadingNextPageIndicator extends StatelessWidget {
   const _LoadingNextPageIndicator();
 
   @override
-  Widget build(BuildContext context) => const CircularProgressIndicator();
+  Widget build(BuildContext context) => const Center(child: CircularProgressIndicator());
 }
 
 class _LoadingNextPageError extends StatelessWidget {
