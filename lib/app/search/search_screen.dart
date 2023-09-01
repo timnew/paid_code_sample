@@ -4,8 +4,8 @@ import 'package:paid_code_test/features/find_service.dart';
 import 'package:provider/provider.dart';
 
 import 'search_field.dart';
-import 'sliver_search_result.dart';
 import 'search_store.dart';
+import 'sliver_search_result.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -50,14 +50,15 @@ class _ScreenLayout extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              title: const Text('Search'),
+              title: const Text('News Search'),
               floating: true,
               snap: true,
-            ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                child: searchField,
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(60.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: searchField,
+                ),
               ),
             ),
             sliverSearchResult,

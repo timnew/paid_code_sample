@@ -8,11 +8,12 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => TextField(
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          prefixIcon: Icon(Icons.search),
-          labelText: "Search",
-          hintText: "Keywords for the news",
+        decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          prefixIcon: const Icon(Icons.search),
+          filled: true,
+          fillColor: Theme.of(context).colorScheme.surface,
+          hintText: "Enter keywords to search for news",
         ),
         textInputAction: TextInputAction.search,
         onSubmitted: (value) => context.read<SearchStore>().search(value),
