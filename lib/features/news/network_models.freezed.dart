@@ -129,13 +129,14 @@ class __$$_BodyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Body implements _Body {
+class _$_Body extends _Body {
   const _$_Body(
       {required this.totalResults,
       required final List<NewsSearchArticle> articles,
       final String? $type})
       : _articles = articles,
-        $type = $type ?? 'ok';
+        $type = $type ?? 'ok',
+        super._();
 
   factory _$_Body.fromJson(Map<String, dynamic> json) => _$$_BodyFromJson(json);
 
@@ -251,10 +252,11 @@ class _$_Body implements _Body {
   }
 }
 
-abstract class _Body implements NewsSearchResponseBody {
+abstract class _Body extends NewsSearchResponseBody {
   const factory _Body(
       {required final int totalResults,
       required final List<NewsSearchArticle> articles}) = _$_Body;
+  const _Body._() : super._();
 
   factory _Body.fromJson(Map<String, dynamic> json) = _$_Body.fromJson;
 
@@ -300,10 +302,11 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Error implements _Error {
+class _$_Error extends _Error {
   const _$_Error(
       {required this.code, required this.message, final String? $type})
-      : $type = $type ?? 'error';
+      : $type = $type ?? 'error',
+        super._();
 
   factory _$_Error.fromJson(Map<String, dynamic> json) =>
       _$$_ErrorFromJson(json);
@@ -413,9 +416,10 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements NewsSearchResponseBody {
+abstract class _Error extends NewsSearchResponseBody {
   const factory _Error(
       {required final String code, required final String message}) = _$_Error;
+  const _Error._() : super._();
 
   factory _Error.fromJson(Map<String, dynamic> json) = _$_Error.fromJson;
 
@@ -614,7 +618,7 @@ class __$$_NewsSearchArticleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NewsSearchArticle implements _NewsSearchArticle {
+class _$_NewsSearchArticle extends _NewsSearchArticle {
   const _$_NewsSearchArticle(
       {required this.source,
       required this.author,
@@ -623,7 +627,8 @@ class _$_NewsSearchArticle implements _NewsSearchArticle {
       required this.url,
       required this.urlToImage,
       required this.publishedAt,
-      required this.content});
+      required this.content})
+      : super._();
 
   factory _$_NewsSearchArticle.fromJson(Map<String, dynamic> json) =>
       _$$_NewsSearchArticleFromJson(json);
@@ -688,7 +693,7 @@ class _$_NewsSearchArticle implements _NewsSearchArticle {
   }
 }
 
-abstract class _NewsSearchArticle implements NewsSearchArticle {
+abstract class _NewsSearchArticle extends NewsSearchArticle {
   const factory _NewsSearchArticle(
       {required final NewsSearchArticleSource source,
       required final String author,
@@ -698,6 +703,7 @@ abstract class _NewsSearchArticle implements NewsSearchArticle {
       required final String urlToImage,
       required final String publishedAt,
       required final String content}) = _$_NewsSearchArticle;
+  const _NewsSearchArticle._() : super._();
 
   factory _NewsSearchArticle.fromJson(Map<String, dynamic> json) =
       _$_NewsSearchArticle.fromJson;

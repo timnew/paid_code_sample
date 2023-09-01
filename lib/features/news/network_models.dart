@@ -6,6 +6,8 @@ part 'network_models.g.dart';
 
 @Freezed(unionKey: 'status')
 class NewsSearchResponseBody with _$NewsSearchResponseBody {
+  const NewsSearchResponseBody._();
+
   @FreezedUnionValue('ok')
   const factory NewsSearchResponseBody({
     required int totalResults,
@@ -24,6 +26,8 @@ class NewsSearchResponseBody with _$NewsSearchResponseBody {
 
 @freezed
 class NewsSearchArticle with _$NewsSearchArticle {
+  const NewsSearchArticle._();
+
   const factory NewsSearchArticle({
     required NewsSearchArticleSource source,
     required String author,

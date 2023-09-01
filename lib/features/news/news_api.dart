@@ -11,7 +11,7 @@ abstract class NewsApi {
 
   @GET("everything")
   Future<NewsSearchResponseBody> getEverything({
-    @Query("apiKey") String apiKey,
+    @Query("apiKey") required String apiKey,
     @Query("q") String? query,
     @Query("searchIn") String? searchIn,
     @Query("sources") String? sources,

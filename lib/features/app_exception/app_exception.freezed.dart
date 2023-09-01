@@ -159,7 +159,8 @@ class __$$UnexpectedExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UnexpectedException extends UnexpectedException {
+class _$UnexpectedException extends UnexpectedException
+    with DiagnosticableTreeMixin {
   const _$UnexpectedException({this.message = 'Unexpected exception'})
       : super._();
 
@@ -168,8 +169,16 @@ class _$UnexpectedException extends UnexpectedException {
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppException.unexpected(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppException.unexpected'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -336,7 +345,7 @@ class __$$NetworkExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NetworkException extends NetworkException {
+class _$NetworkException extends NetworkException with DiagnosticableTreeMixin {
   const _$NetworkException(
       {this.message = 'Network error', this.canRetry = true})
       : super._();
@@ -349,8 +358,17 @@ class _$NetworkException extends NetworkException {
   final bool canRetry;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppException.network(message: $message, canRetry: $canRetry)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppException.network'))
+      ..add(DiagnosticsProperty('message', message))
+      ..add(DiagnosticsProperty('canRetry', canRetry));
   }
 
   @override
@@ -514,7 +532,8 @@ class __$$BadRequestExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BadRequestException extends BadRequestException {
+class _$BadRequestException extends BadRequestException
+    with DiagnosticableTreeMixin {
   const _$BadRequestException({this.message = 'Bad request'}) : super._();
 
   @override
@@ -522,8 +541,16 @@ class _$BadRequestException extends BadRequestException {
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppException.badRequest(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppException.badRequest'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -685,7 +712,8 @@ class __$$UnauthorisedExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UnauthorisedException extends UnauthorisedException {
+class _$UnauthorisedException extends UnauthorisedException
+    with DiagnosticableTreeMixin {
   const _$UnauthorisedException({this.message = 'Please sign in again'})
       : super._();
 
@@ -694,8 +722,16 @@ class _$UnauthorisedException extends UnauthorisedException {
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppException.unauthorised(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppException.unauthorised'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -857,7 +893,8 @@ class __$$NoPermissionExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NoPermissionException extends NoPermissionException {
+class _$NoPermissionException extends NoPermissionException
+    with DiagnosticableTreeMixin {
   const _$NoPermissionException(
       {this.message = "You don't have permission to access resource"})
       : super._();
@@ -867,8 +904,16 @@ class _$NoPermissionException extends NoPermissionException {
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppException.noPermission(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppException.noPermission'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1030,7 +1075,8 @@ class __$$NotFoundExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NotFoundException extends NotFoundException {
+class _$NotFoundException extends NotFoundException
+    with DiagnosticableTreeMixin {
   const _$NotFoundException({this.message = 'Resource not found'}) : super._();
 
   @override
@@ -1038,8 +1084,16 @@ class _$NotFoundException extends NotFoundException {
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppException.notFound(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppException.notFound'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1199,7 +1253,8 @@ class __$$CancelledExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CancelledException extends CancelledException {
+class _$CancelledException extends CancelledException
+    with DiagnosticableTreeMixin {
   const _$CancelledException({this.message = 'Cancelled'}) : super._();
 
   @override
@@ -1207,8 +1262,16 @@ class _$CancelledException extends CancelledException {
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AppException.cancelled(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppException.cancelled'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
