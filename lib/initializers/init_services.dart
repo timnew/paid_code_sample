@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:logging/logging.dart';
 import 'package:paid_code_test/features/find_service.dart';
+import 'package:paid_code_test/features/news/news_repository.dart';
 
 import 'create_dio.dart';
 import 'setup_logger.dart';
@@ -20,6 +21,13 @@ Future<void> initServices() async {
   findService.registerSingletonAsync(
     () => createDio(
       enableTrafficLogging: kDebugMode,
+    ),
+  );
+
+  findService.registerFactory(
+    () => NewsRepository.create(
+      dio: findService(),
+      apiKey: 'c069630adc5c4fd893156917b7da614d', // Hardcoded for now to simplify the setup
     ),
   );
 
