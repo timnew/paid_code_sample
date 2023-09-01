@@ -24,13 +24,8 @@ mixin _$SearchState {
     required TResult Function(SearchQuery query, AppException exception)
         failedOnFirstPage,
     required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
+            NextPageState nextPageState)
         loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,13 +36,8 @@ mixin _$SearchState {
     TResult? Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,13 +48,8 @@ mixin _$SearchState {
     TResult Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,8 +60,6 @@ mixin _$SearchState {
     required TResult Function(_NoResult value) noResult,
     required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,8 +69,6 @@ mixin _$SearchState {
     TResult? Function(_NoResult value)? noResult,
     TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -97,8 +78,6 @@ mixin _$SearchState {
     TResult Function(_NoResult value)? noResult,
     TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,13 +144,8 @@ class _$_Initial extends _Initial {
     required TResult Function(SearchQuery query, AppException exception)
         failedOnFirstPage,
     required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
+            NextPageState nextPageState)
         loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
   }) {
     return initial();
   }
@@ -185,13 +159,8 @@ class _$_Initial extends _Initial {
     TResult? Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
   }) {
     return initial?.call();
   }
@@ -205,13 +174,8 @@ class _$_Initial extends _Initial {
     TResult Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -228,8 +192,6 @@ class _$_Initial extends _Initial {
     required TResult Function(_NoResult value) noResult,
     required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
   }) {
     return initial(this);
   }
@@ -242,8 +204,6 @@ class _$_Initial extends _Initial {
     TResult? Function(_NoResult value)? noResult,
     TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
   }) {
     return initial?.call(this);
   }
@@ -256,8 +216,6 @@ class _$_Initial extends _Initial {
     TResult Function(_NoResult value)? noResult,
     TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -352,13 +310,8 @@ class _$_LoadingFirstPage extends _LoadingFirstPage {
     required TResult Function(SearchQuery query, AppException exception)
         failedOnFirstPage,
     required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
+            NextPageState nextPageState)
         loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
   }) {
     return loadingFirstPage(query);
   }
@@ -372,13 +325,8 @@ class _$_LoadingFirstPage extends _LoadingFirstPage {
     TResult? Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
   }) {
     return loadingFirstPage?.call(query);
   }
@@ -392,13 +340,8 @@ class _$_LoadingFirstPage extends _LoadingFirstPage {
     TResult Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
     required TResult orElse(),
   }) {
     if (loadingFirstPage != null) {
@@ -415,8 +358,6 @@ class _$_LoadingFirstPage extends _LoadingFirstPage {
     required TResult Function(_NoResult value) noResult,
     required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
   }) {
     return loadingFirstPage(this);
   }
@@ -429,8 +370,6 @@ class _$_LoadingFirstPage extends _LoadingFirstPage {
     TResult? Function(_NoResult value)? noResult,
     TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
   }) {
     return loadingFirstPage?.call(this);
   }
@@ -443,8 +382,6 @@ class _$_LoadingFirstPage extends _LoadingFirstPage {
     TResult Function(_NoResult value)? noResult,
     TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
     required TResult orElse(),
   }) {
     if (loadingFirstPage != null) {
@@ -545,13 +482,8 @@ class _$_NoResult extends _NoResult {
     required TResult Function(SearchQuery query, AppException exception)
         failedOnFirstPage,
     required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
+            NextPageState nextPageState)
         loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
   }) {
     return noResult(query);
   }
@@ -565,13 +497,8 @@ class _$_NoResult extends _NoResult {
     TResult? Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
   }) {
     return noResult?.call(query);
   }
@@ -585,13 +512,8 @@ class _$_NoResult extends _NoResult {
     TResult Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
     required TResult orElse(),
   }) {
     if (noResult != null) {
@@ -608,8 +530,6 @@ class _$_NoResult extends _NoResult {
     required TResult Function(_NoResult value) noResult,
     required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
   }) {
     return noResult(this);
   }
@@ -622,8 +542,6 @@ class _$_NoResult extends _NoResult {
     TResult? Function(_NoResult value)? noResult,
     TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
   }) {
     return noResult?.call(this);
   }
@@ -636,8 +554,6 @@ class _$_NoResult extends _NoResult {
     TResult Function(_NoResult value)? noResult,
     TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
     required TResult orElse(),
   }) {
     if (noResult != null) {
@@ -757,13 +673,8 @@ class _$_FailedOnFirstPage extends _FailedOnFirstPage {
     required TResult Function(SearchQuery query, AppException exception)
         failedOnFirstPage,
     required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
+            NextPageState nextPageState)
         loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
   }) {
     return failedOnFirstPage(query, exception);
   }
@@ -777,13 +688,8 @@ class _$_FailedOnFirstPage extends _FailedOnFirstPage {
     TResult? Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
   }) {
     return failedOnFirstPage?.call(query, exception);
   }
@@ -797,13 +703,8 @@ class _$_FailedOnFirstPage extends _FailedOnFirstPage {
     TResult Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
     required TResult orElse(),
   }) {
     if (failedOnFirstPage != null) {
@@ -820,8 +721,6 @@ class _$_FailedOnFirstPage extends _FailedOnFirstPage {
     required TResult Function(_NoResult value) noResult,
     required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
   }) {
     return failedOnFirstPage(this);
   }
@@ -834,8 +733,6 @@ class _$_FailedOnFirstPage extends _FailedOnFirstPage {
     TResult? Function(_NoResult value)? noResult,
     TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
   }) {
     return failedOnFirstPage?.call(this);
   }
@@ -848,8 +745,6 @@ class _$_FailedOnFirstPage extends _FailedOnFirstPage {
     TResult Function(_NoResult value)? noResult,
     TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
     required TResult orElse(),
   }) {
     if (failedOnFirstPage != null) {
@@ -878,9 +773,12 @@ abstract class _$$_LoadedCopyWith<$Res> {
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {SearchQuery query, List<ArticleEntry> articles, bool canLoadNextPage});
+      {SearchQuery query,
+      List<ArticleEntry> articles,
+      NextPageState nextPageState});
 
   $SearchQueryCopyWith<$Res> get query;
+  $NextPageStateCopyWith<$Res> get nextPageState;
 }
 
 /// @nodoc
@@ -895,7 +793,7 @@ class __$$_LoadedCopyWithImpl<$Res>
   $Res call({
     Object? query = null,
     Object? articles = null,
-    Object? canLoadNextPage = null,
+    Object? nextPageState = null,
   }) {
     return _then(_$_Loaded(
       query: null == query
@@ -906,10 +804,10 @@ class __$$_LoadedCopyWithImpl<$Res>
           ? _value._articles
           : articles // ignore: cast_nullable_to_non_nullable
               as List<ArticleEntry>,
-      canLoadNextPage: null == canLoadNextPage
-          ? _value.canLoadNextPage
-          : canLoadNextPage // ignore: cast_nullable_to_non_nullable
-              as bool,
+      nextPageState: null == nextPageState
+          ? _value.nextPageState
+          : nextPageState // ignore: cast_nullable_to_non_nullable
+              as NextPageState,
     ));
   }
 
@@ -920,6 +818,14 @@ class __$$_LoadedCopyWithImpl<$Res>
       return _then(_value.copyWith(query: value));
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NextPageStateCopyWith<$Res> get nextPageState {
+    return $NextPageStateCopyWith<$Res>(_value.nextPageState, (value) {
+      return _then(_value.copyWith(nextPageState: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -928,7 +834,7 @@ class _$_Loaded extends _Loaded {
   const _$_Loaded(
       {required this.query,
       required final List<ArticleEntry> articles,
-      this.canLoadNextPage = true})
+      this.nextPageState = const NextPageState.hasMorePage()})
       : _articles = articles,
         super._();
 
@@ -944,11 +850,11 @@ class _$_Loaded extends _Loaded {
 
   @override
   @JsonKey()
-  final bool canLoadNextPage;
+  final NextPageState nextPageState;
 
   @override
   String toString() {
-    return 'SearchState.loaded(query: $query, articles: $articles, canLoadNextPage: $canLoadNextPage)';
+    return 'SearchState.loaded(query: $query, articles: $articles, nextPageState: $nextPageState)';
   }
 
   @override
@@ -958,13 +864,13 @@ class _$_Loaded extends _Loaded {
             other is _$_Loaded &&
             (identical(other.query, query) || other.query == query) &&
             const DeepCollectionEquality().equals(other._articles, _articles) &&
-            (identical(other.canLoadNextPage, canLoadNextPage) ||
-                other.canLoadNextPage == canLoadNextPage));
+            (identical(other.nextPageState, nextPageState) ||
+                other.nextPageState == nextPageState));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, query,
-      const DeepCollectionEquality().hash(_articles), canLoadNextPage);
+      const DeepCollectionEquality().hash(_articles), nextPageState);
 
   @JsonKey(ignore: true)
   @override
@@ -981,15 +887,10 @@ class _$_Loaded extends _Loaded {
     required TResult Function(SearchQuery query, AppException exception)
         failedOnFirstPage,
     required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
+            NextPageState nextPageState)
         loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
   }) {
-    return loaded(query, articles, canLoadNextPage);
+    return loaded(query, articles, nextPageState);
   }
 
   @override
@@ -1001,15 +902,10 @@ class _$_Loaded extends _Loaded {
     TResult? Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
   }) {
-    return loaded?.call(query, articles, canLoadNextPage);
+    return loaded?.call(query, articles, nextPageState);
   }
 
   @override
@@ -1021,17 +917,12 @@ class _$_Loaded extends _Loaded {
     TResult Function(SearchQuery query, AppException exception)?
         failedOnFirstPage,
     TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
+            NextPageState nextPageState)?
         loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(query, articles, canLoadNextPage);
+      return loaded(query, articles, nextPageState);
     }
     return orElse();
   }
@@ -1044,8 +935,6 @@ class _$_Loaded extends _Loaded {
     required TResult Function(_NoResult value) noResult,
     required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
   }) {
     return loaded(this);
   }
@@ -1058,8 +947,6 @@ class _$_Loaded extends _Loaded {
     TResult? Function(_NoResult value)? noResult,
     TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
   }) {
     return loaded?.call(this);
   }
@@ -1072,8 +959,6 @@ class _$_Loaded extends _Loaded {
     TResult Function(_NoResult value)? noResult,
     TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -1087,165 +972,157 @@ abstract class _Loaded extends SearchState {
   const factory _Loaded(
       {required final SearchQuery query,
       required final List<ArticleEntry> articles,
-      final bool canLoadNextPage}) = _$_Loaded;
+      final NextPageState nextPageState}) = _$_Loaded;
   const _Loaded._() : super._();
 
   SearchQuery get query;
   List<ArticleEntry> get articles;
-  bool get canLoadNextPage;
+  NextPageState get nextPageState;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LoadingNextPageCopyWith<$Res> {
-  factory _$$_LoadingNextPageCopyWith(
-          _$_LoadingNextPage value, $Res Function(_$_LoadingNextPage) then) =
-      __$$_LoadingNextPageCopyWithImpl<$Res>;
-  @useResult
-  $Res call({SearchQuery query, List<ArticleEntry> articles});
-
-  $SearchQueryCopyWith<$Res> get query;
+mixin _$NextPageState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() hasMorePages,
+    required TResult Function() noMorePage,
+    required TResult Function() loading,
+    required TResult Function(AppException exception) failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? hasMorePages,
+    TResult? Function()? noMorePage,
+    TResult? Function()? loading,
+    TResult? Function(AppException exception)? failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? hasMorePages,
+    TResult Function()? noMorePage,
+    TResult Function()? loading,
+    TResult Function(AppException exception)? failed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HasMorePages value) hasMorePages,
+    required TResult Function(_NoMorePage value) noMorePage,
+    required TResult Function(_LoadingNextPage value) loading,
+    required TResult Function(_FailedLoadNextPage value) failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_HasMorePages value)? hasMorePages,
+    TResult? Function(_NoMorePage value)? noMorePage,
+    TResult? Function(_LoadingNextPage value)? loading,
+    TResult? Function(_FailedLoadNextPage value)? failed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HasMorePages value)? hasMorePages,
+    TResult Function(_NoMorePage value)? noMorePage,
+    TResult Function(_LoadingNextPage value)? loading,
+    TResult Function(_FailedLoadNextPage value)? failed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class __$$_LoadingNextPageCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$_LoadingNextPage>
-    implements _$$_LoadingNextPageCopyWith<$Res> {
-  __$$_LoadingNextPageCopyWithImpl(
-      _$_LoadingNextPage _value, $Res Function(_$_LoadingNextPage) _then)
+abstract class $NextPageStateCopyWith<$Res> {
+  factory $NextPageStateCopyWith(
+          NextPageState value, $Res Function(NextPageState) then) =
+      _$NextPageStateCopyWithImpl<$Res, NextPageState>;
+}
+
+/// @nodoc
+class _$NextPageStateCopyWithImpl<$Res, $Val extends NextPageState>
+    implements $NextPageStateCopyWith<$Res> {
+  _$NextPageStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_HasMorePagesCopyWith<$Res> {
+  factory _$$_HasMorePagesCopyWith(
+          _$_HasMorePages value, $Res Function(_$_HasMorePages) then) =
+      __$$_HasMorePagesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_HasMorePagesCopyWithImpl<$Res>
+    extends _$NextPageStateCopyWithImpl<$Res, _$_HasMorePages>
+    implements _$$_HasMorePagesCopyWith<$Res> {
+  __$$_HasMorePagesCopyWithImpl(
+      _$_HasMorePages _value, $Res Function(_$_HasMorePages) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? query = null,
-    Object? articles = null,
-  }) {
-    return _then(_$_LoadingNextPage(
-      query: null == query
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as SearchQuery,
-      articles: null == articles
-          ? _value._articles
-          : articles // ignore: cast_nullable_to_non_nullable
-              as List<ArticleEntry>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SearchQueryCopyWith<$Res> get query {
-    return $SearchQueryCopyWith<$Res>(_value.query, (value) {
-      return _then(_value.copyWith(query: value));
-    });
-  }
 }
 
 /// @nodoc
 
-class _$_LoadingNextPage extends _LoadingNextPage {
-  const _$_LoadingNextPage(
-      {required this.query, required final List<ArticleEntry> articles})
-      : _articles = articles,
-        super._();
-
-  @override
-  final SearchQuery query;
-  final List<ArticleEntry> _articles;
-  @override
-  List<ArticleEntry> get articles {
-    if (_articles is EqualUnmodifiableListView) return _articles;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_articles);
-  }
+class _$_HasMorePages extends _HasMorePages {
+  const _$_HasMorePages() : super._();
 
   @override
   String toString() {
-    return 'SearchState.loadingNewPage(query: $query, articles: $articles)';
+    return 'NextPageState.hasMorePages()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_LoadingNextPage &&
-            (identical(other.query, query) || other.query == query) &&
-            const DeepCollectionEquality().equals(other._articles, _articles));
+        (other.runtimeType == runtimeType && other is _$_HasMorePages);
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, query, const DeepCollectionEquality().hash(_articles));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_LoadingNextPageCopyWith<_$_LoadingNextPage> get copyWith =>
-      __$$_LoadingNextPageCopyWithImpl<_$_LoadingNextPage>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(SearchQuery query) loadingFirstPage,
-    required TResult Function(SearchQuery query) noResult,
-    required TResult Function(SearchQuery query, AppException exception)
-        failedOnFirstPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
-        loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
+    required TResult Function() hasMorePages,
+    required TResult Function() noMorePage,
+    required TResult Function() loading,
+    required TResult Function(AppException exception) failed,
   }) {
-    return loadingNewPage(query, articles);
+    return hasMorePages();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(SearchQuery query)? loadingFirstPage,
-    TResult? Function(SearchQuery query)? noResult,
-    TResult? Function(SearchQuery query, AppException exception)?
-        failedOnFirstPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
-        loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
+    TResult? Function()? hasMorePages,
+    TResult? Function()? noMorePage,
+    TResult? Function()? loading,
+    TResult? Function(AppException exception)? failed,
   }) {
-    return loadingNewPage?.call(query, articles);
+    return hasMorePages?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(SearchQuery query)? loadingFirstPage,
-    TResult Function(SearchQuery query)? noResult,
-    TResult Function(SearchQuery query, AppException exception)?
-        failedOnFirstPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
-        loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
+    TResult Function()? hasMorePages,
+    TResult Function()? noMorePage,
+    TResult Function()? loading,
+    TResult Function(AppException exception)? failed,
     required TResult orElse(),
   }) {
-    if (loadingNewPage != null) {
-      return loadingNewPage(query, articles);
+    if (hasMorePages != null) {
+      return hasMorePages();
     }
     return orElse();
   }
@@ -1253,113 +1130,306 @@ class _$_LoadingNextPage extends _LoadingNextPage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadingFirstPage value) loadingFirstPage,
-    required TResult Function(_NoResult value) noResult,
-    required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
+    required TResult Function(_HasMorePages value) hasMorePages,
+    required TResult Function(_NoMorePage value) noMorePage,
+    required TResult Function(_LoadingNextPage value) loading,
+    required TResult Function(_FailedLoadNextPage value) failed,
   }) {
-    return loadingNewPage(this);
+    return hasMorePages(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadingFirstPage value)? loadingFirstPage,
-    TResult? Function(_NoResult value)? noResult,
-    TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
+    TResult? Function(_HasMorePages value)? hasMorePages,
+    TResult? Function(_NoMorePage value)? noMorePage,
+    TResult? Function(_LoadingNextPage value)? loading,
+    TResult? Function(_FailedLoadNextPage value)? failed,
   }) {
-    return loadingNewPage?.call(this);
+    return hasMorePages?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingFirstPage value)? loadingFirstPage,
-    TResult Function(_NoResult value)? noResult,
-    TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
+    TResult Function(_HasMorePages value)? hasMorePages,
+    TResult Function(_NoMorePage value)? noMorePage,
+    TResult Function(_LoadingNextPage value)? loading,
+    TResult Function(_FailedLoadNextPage value)? failed,
     required TResult orElse(),
   }) {
-    if (loadingNewPage != null) {
-      return loadingNewPage(this);
+    if (hasMorePages != null) {
+      return hasMorePages(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadingNextPage extends SearchState {
-  const factory _LoadingNextPage(
-      {required final SearchQuery query,
-      required final List<ArticleEntry> articles}) = _$_LoadingNextPage;
-  const _LoadingNextPage._() : super._();
-
-  SearchQuery get query;
-  List<ArticleEntry> get articles;
-  @JsonKey(ignore: true)
-  _$$_LoadingNextPageCopyWith<_$_LoadingNextPage> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _HasMorePages extends NextPageState {
+  const factory _HasMorePages() = _$_HasMorePages;
+  const _HasMorePages._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_FailedOnNextPageCopyWith<$Res> {
-  factory _$$_FailedOnNextPageCopyWith(
-          _$_FailedOnNextPage value, $Res Function(_$_FailedOnNextPage) then) =
-      __$$_FailedOnNextPageCopyWithImpl<$Res>;
-  @useResult
-  $Res call(
-      {SearchQuery query, List<ArticleEntry> articles, AppException exception});
+abstract class _$$_NoMorePageCopyWith<$Res> {
+  factory _$$_NoMorePageCopyWith(
+          _$_NoMorePage value, $Res Function(_$_NoMorePage) then) =
+      __$$_NoMorePageCopyWithImpl<$Res>;
+}
 
-  $SearchQueryCopyWith<$Res> get query;
+/// @nodoc
+class __$$_NoMorePageCopyWithImpl<$Res>
+    extends _$NextPageStateCopyWithImpl<$Res, _$_NoMorePage>
+    implements _$$_NoMorePageCopyWith<$Res> {
+  __$$_NoMorePageCopyWithImpl(
+      _$_NoMorePage _value, $Res Function(_$_NoMorePage) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_NoMorePage extends _NoMorePage {
+  const _$_NoMorePage() : super._();
+
+  @override
+  String toString() {
+    return 'NextPageState.noMorePage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_NoMorePage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() hasMorePages,
+    required TResult Function() noMorePage,
+    required TResult Function() loading,
+    required TResult Function(AppException exception) failed,
+  }) {
+    return noMorePage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? hasMorePages,
+    TResult? Function()? noMorePage,
+    TResult? Function()? loading,
+    TResult? Function(AppException exception)? failed,
+  }) {
+    return noMorePage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? hasMorePages,
+    TResult Function()? noMorePage,
+    TResult Function()? loading,
+    TResult Function(AppException exception)? failed,
+    required TResult orElse(),
+  }) {
+    if (noMorePage != null) {
+      return noMorePage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HasMorePages value) hasMorePages,
+    required TResult Function(_NoMorePage value) noMorePage,
+    required TResult Function(_LoadingNextPage value) loading,
+    required TResult Function(_FailedLoadNextPage value) failed,
+  }) {
+    return noMorePage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_HasMorePages value)? hasMorePages,
+    TResult? Function(_NoMorePage value)? noMorePage,
+    TResult? Function(_LoadingNextPage value)? loading,
+    TResult? Function(_FailedLoadNextPage value)? failed,
+  }) {
+    return noMorePage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HasMorePages value)? hasMorePages,
+    TResult Function(_NoMorePage value)? noMorePage,
+    TResult Function(_LoadingNextPage value)? loading,
+    TResult Function(_FailedLoadNextPage value)? failed,
+    required TResult orElse(),
+  }) {
+    if (noMorePage != null) {
+      return noMorePage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NoMorePage extends NextPageState {
+  const factory _NoMorePage() = _$_NoMorePage;
+  const _NoMorePage._() : super._();
+}
+
+/// @nodoc
+abstract class _$$_LoadingNextPageCopyWith<$Res> {
+  factory _$$_LoadingNextPageCopyWith(
+          _$_LoadingNextPage value, $Res Function(_$_LoadingNextPage) then) =
+      __$$_LoadingNextPageCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_LoadingNextPageCopyWithImpl<$Res>
+    extends _$NextPageStateCopyWithImpl<$Res, _$_LoadingNextPage>
+    implements _$$_LoadingNextPageCopyWith<$Res> {
+  __$$_LoadingNextPageCopyWithImpl(
+      _$_LoadingNextPage _value, $Res Function(_$_LoadingNextPage) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_LoadingNextPage extends _LoadingNextPage {
+  const _$_LoadingNextPage() : super._();
+
+  @override
+  String toString() {
+    return 'NextPageState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadingNextPage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() hasMorePages,
+    required TResult Function() noMorePage,
+    required TResult Function() loading,
+    required TResult Function(AppException exception) failed,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? hasMorePages,
+    TResult? Function()? noMorePage,
+    TResult? Function()? loading,
+    TResult? Function(AppException exception)? failed,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? hasMorePages,
+    TResult Function()? noMorePage,
+    TResult Function()? loading,
+    TResult Function(AppException exception)? failed,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HasMorePages value) hasMorePages,
+    required TResult Function(_NoMorePage value) noMorePage,
+    required TResult Function(_LoadingNextPage value) loading,
+    required TResult Function(_FailedLoadNextPage value) failed,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_HasMorePages value)? hasMorePages,
+    TResult? Function(_NoMorePage value)? noMorePage,
+    TResult? Function(_LoadingNextPage value)? loading,
+    TResult? Function(_FailedLoadNextPage value)? failed,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HasMorePages value)? hasMorePages,
+    TResult Function(_NoMorePage value)? noMorePage,
+    TResult Function(_LoadingNextPage value)? loading,
+    TResult Function(_FailedLoadNextPage value)? failed,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingNextPage extends NextPageState {
+  const factory _LoadingNextPage() = _$_LoadingNextPage;
+  const _LoadingNextPage._() : super._();
+}
+
+/// @nodoc
+abstract class _$$_FailedLoadNextPageCopyWith<$Res> {
+  factory _$$_FailedLoadNextPageCopyWith(_$_FailedLoadNextPage value,
+          $Res Function(_$_FailedLoadNextPage) then) =
+      __$$_FailedLoadNextPageCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AppException exception});
+
   $AppExceptionCopyWith<$Res> get exception;
 }
 
 /// @nodoc
-class __$$_FailedOnNextPageCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$_FailedOnNextPage>
-    implements _$$_FailedOnNextPageCopyWith<$Res> {
-  __$$_FailedOnNextPageCopyWithImpl(
-      _$_FailedOnNextPage _value, $Res Function(_$_FailedOnNextPage) _then)
+class __$$_FailedLoadNextPageCopyWithImpl<$Res>
+    extends _$NextPageStateCopyWithImpl<$Res, _$_FailedLoadNextPage>
+    implements _$$_FailedLoadNextPageCopyWith<$Res> {
+  __$$_FailedLoadNextPageCopyWithImpl(
+      _$_FailedLoadNextPage _value, $Res Function(_$_FailedLoadNextPage) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = null,
-    Object? articles = null,
     Object? exception = null,
   }) {
-    return _then(_$_FailedOnNextPage(
-      query: null == query
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as SearchQuery,
-      articles: null == articles
-          ? _value._articles
-          : articles // ignore: cast_nullable_to_non_nullable
-              as List<ArticleEntry>,
-      exception: null == exception
+    return _then(_$_FailedLoadNextPage(
+      null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
               as AppException,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SearchQueryCopyWith<$Res> get query {
-    return $SearchQueryCopyWith<$Res>(_value.query, (value) {
-      return _then(_value.copyWith(query: value));
-    });
   }
 
   @override
@@ -1373,113 +1443,69 @@ class __$$_FailedOnNextPageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FailedOnNextPage extends _FailedOnNextPage {
-  const _$_FailedOnNextPage(
-      {required this.query,
-      required final List<ArticleEntry> articles,
-      required this.exception})
-      : _articles = articles,
-        super._();
-
-  @override
-  final SearchQuery query;
-  final List<ArticleEntry> _articles;
-  @override
-  List<ArticleEntry> get articles {
-    if (_articles is EqualUnmodifiableListView) return _articles;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_articles);
-  }
+class _$_FailedLoadNextPage extends _FailedLoadNextPage {
+  const _$_FailedLoadNextPage(this.exception) : super._();
 
   @override
   final AppException exception;
 
   @override
   String toString() {
-    return 'SearchState.failedOnNextPage(query: $query, articles: $articles, exception: $exception)';
+    return 'NextPageState.failed(exception: $exception)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FailedOnNextPage &&
-            (identical(other.query, query) || other.query == query) &&
-            const DeepCollectionEquality().equals(other._articles, _articles) &&
+            other is _$_FailedLoadNextPage &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, query,
-      const DeepCollectionEquality().hash(_articles), exception);
+  int get hashCode => Object.hash(runtimeType, exception);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FailedOnNextPageCopyWith<_$_FailedOnNextPage> get copyWith =>
-      __$$_FailedOnNextPageCopyWithImpl<_$_FailedOnNextPage>(this, _$identity);
+  _$$_FailedLoadNextPageCopyWith<_$_FailedLoadNextPage> get copyWith =>
+      __$$_FailedLoadNextPageCopyWithImpl<_$_FailedLoadNextPage>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(SearchQuery query) loadingFirstPage,
-    required TResult Function(SearchQuery query) noResult,
-    required TResult Function(SearchQuery query, AppException exception)
-        failedOnFirstPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)
-        loaded,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles)
-        loadingNewPage,
-    required TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)
-        failedOnNextPage,
+    required TResult Function() hasMorePages,
+    required TResult Function() noMorePage,
+    required TResult Function() loading,
+    required TResult Function(AppException exception) failed,
   }) {
-    return failedOnNextPage(query, articles, exception);
+    return failed(exception);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(SearchQuery query)? loadingFirstPage,
-    TResult? Function(SearchQuery query)? noResult,
-    TResult? Function(SearchQuery query, AppException exception)?
-        failedOnFirstPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
-        loaded,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult? Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
+    TResult? Function()? hasMorePages,
+    TResult? Function()? noMorePage,
+    TResult? Function()? loading,
+    TResult? Function(AppException exception)? failed,
   }) {
-    return failedOnNextPage?.call(query, articles, exception);
+    return failed?.call(exception);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(SearchQuery query)? loadingFirstPage,
-    TResult Function(SearchQuery query)? noResult,
-    TResult Function(SearchQuery query, AppException exception)?
-        failedOnFirstPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            bool canLoadNextPage)?
-        loaded,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles)?
-        loadingNewPage,
-    TResult Function(SearchQuery query, List<ArticleEntry> articles,
-            AppException exception)?
-        failedOnNextPage,
+    TResult Function()? hasMorePages,
+    TResult Function()? noMorePage,
+    TResult Function()? loading,
+    TResult Function(AppException exception)? failed,
     required TResult orElse(),
   }) {
-    if (failedOnNextPage != null) {
-      return failedOnNextPage(query, articles, exception);
+    if (failed != null) {
+      return failed(exception);
     }
     return orElse();
   }
@@ -1487,61 +1513,48 @@ class _$_FailedOnNextPage extends _FailedOnNextPage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadingFirstPage value) loadingFirstPage,
-    required TResult Function(_NoResult value) noResult,
-    required TResult Function(_FailedOnFirstPage value) failedOnFirstPage,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_LoadingNextPage value) loadingNewPage,
-    required TResult Function(_FailedOnNextPage value) failedOnNextPage,
+    required TResult Function(_HasMorePages value) hasMorePages,
+    required TResult Function(_NoMorePage value) noMorePage,
+    required TResult Function(_LoadingNextPage value) loading,
+    required TResult Function(_FailedLoadNextPage value) failed,
   }) {
-    return failedOnNextPage(this);
+    return failed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadingFirstPage value)? loadingFirstPage,
-    TResult? Function(_NoResult value)? noResult,
-    TResult? Function(_FailedOnFirstPage value)? failedOnFirstPage,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_LoadingNextPage value)? loadingNewPage,
-    TResult? Function(_FailedOnNextPage value)? failedOnNextPage,
+    TResult? Function(_HasMorePages value)? hasMorePages,
+    TResult? Function(_NoMorePage value)? noMorePage,
+    TResult? Function(_LoadingNextPage value)? loading,
+    TResult? Function(_FailedLoadNextPage value)? failed,
   }) {
-    return failedOnNextPage?.call(this);
+    return failed?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadingFirstPage value)? loadingFirstPage,
-    TResult Function(_NoResult value)? noResult,
-    TResult Function(_FailedOnFirstPage value)? failedOnFirstPage,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_LoadingNextPage value)? loadingNewPage,
-    TResult Function(_FailedOnNextPage value)? failedOnNextPage,
+    TResult Function(_HasMorePages value)? hasMorePages,
+    TResult Function(_NoMorePage value)? noMorePage,
+    TResult Function(_LoadingNextPage value)? loading,
+    TResult Function(_FailedLoadNextPage value)? failed,
     required TResult orElse(),
   }) {
-    if (failedOnNextPage != null) {
-      return failedOnNextPage(this);
+    if (failed != null) {
+      return failed(this);
     }
     return orElse();
   }
 }
 
-abstract class _FailedOnNextPage extends SearchState {
-  const factory _FailedOnNextPage(
-      {required final SearchQuery query,
-      required final List<ArticleEntry> articles,
-      required final AppException exception}) = _$_FailedOnNextPage;
-  const _FailedOnNextPage._() : super._();
+abstract class _FailedLoadNextPage extends NextPageState {
+  const factory _FailedLoadNextPage(final AppException exception) =
+      _$_FailedLoadNextPage;
+  const _FailedLoadNextPage._() : super._();
 
-  SearchQuery get query;
-  List<ArticleEntry> get articles;
   AppException get exception;
   @JsonKey(ignore: true)
-  _$$_FailedOnNextPageCopyWith<_$_FailedOnNextPage> get copyWith =>
+  _$$_FailedLoadNextPageCopyWith<_$_FailedLoadNextPage> get copyWith =>
       throw _privateConstructorUsedError;
 }

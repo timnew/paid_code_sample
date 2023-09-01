@@ -28,5 +28,5 @@ class SearchQuery with _$SearchQuery {
     @Default(20) int pageSize,
   }) = _SearchQuery;
 
-  SearchQuery queryNextPage() => copyWith(page: page + 1);
+  SearchQuery nextPage() => copyWith(page: page + 1);
 }

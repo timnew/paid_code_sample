@@ -1,3 +1,4 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:logging/logging.dart';
 import 'package:mobx/mobx.dart';
 import 'package:paid_code_test/app/search/search_state.dart';
@@ -18,19 +19,35 @@ abstract class _SearchStore with Store {
   @observable
   SearchState state = const SearchState.initial();
 
-  @computed
-  bool get canLoadNextPage => state.canLoadNextPage;
-
   @action
   Future<void> search(String keywords) async {
-    _logger.info("Search for $keywords");
-
     if (keywords.isEmpty) {
-      _logger.warning("No keywords");
+      _logger.warning("No keywords. skip search");
       return;
     }
 
+    _logger.info("Search for $keywords");
+
     final query = SearchQuery(keywords: keywords);
+
+    return executeFirstQuery(query);
+  }
+
+  @action
+  Future<void> retryFirstQuery() async {
+    if (!state.isFailedOnFirstPage) {
+      _logger.warning("Wrong state, skip retry");
+      return;
+    }
+
+    _logger.info("Retry first query for ${state.query.keywords}");
+
+    return executeFirstQuery(state.query);
+  }
+
+  @action
+  Future<void> executeFirstQuery(SearchQuery query) async {
+    _logger.info("Query first page for ${query.keywords}");
 
     state = SearchState.loadingFirstPage(query: query);
 
@@ -38,54 +55,78 @@ abstract class _SearchStore with Store {
       final articles = await _repository.searchNews(query);
 
       if (articles.isEmpty) {
-        _logger.info("No result for $keywords");
+        _logger.info("No result for ${query.keywords}");
         state = SearchState.noResult(query: query);
       } else {
-        _logger.info("Found ${articles.length} articles for $keywords");
+        _logger.info("Found ${articles.length} articles for ${query.keywords}");
         state = SearchState.loaded(query: query, articles: articles);
       }
     } on AppException catch (e) {
-      _logger.severe("Failed to search for $keywords", e);
+      _logger.severe("Failed to search for ${query.keywords}", e);
       state = SearchState.failedOnFirstPage(query: query, exception: e);
     }
   }
 
   @action
-  Future<void> loadNextPage() async {
-    assert(canLoadNextPage);
+  Future<void> loadNextPage() => state.maybeWhen(
+        loaded: (query, articles, nextPageState) async {
+          if (!nextPageState.hasMorePages) {
+            _logger.warning("Wrong state, skip load next page");
+            return;
+          }
 
-    final query = state.query.queryNextPage();
+          return executeNextPageQuery(query.nextPage(), articles);
+        },
+        orElse: () async {
+          _logger.warning("Wrong state, skip load next page");
+        },
+      );
 
-    _logger.info("Query page ${query.page} for ${query.keywords}");
+  @action
+  Future<void> retryLoadNextPage() async {
+    if (!state.isFailedOnNextPage) {
+      _logger.warning("Wrong state, skip retry");
+      return;
+    }
 
-    state = SearchState.loadingNewPage(
-      query: query,
-      articles: state.articles,
+    _logger.info("Retry load next page for ${state.query.keywords}");
+
+    return executeNextPageQuery(state.query, state.articles);
+  }
+
+  @action
+  Future<void> executeNextPageQuery(SearchQuery newQuery, List<ArticleEntry> articles) async {
+    _logger.info("Query page ${newQuery.page} for ${newQuery.keywords}");
+
+    state = SearchState.loaded(
+      query: newQuery,
+      articles: articles,
+      nextPageState: const NextPageState.loading(),
     );
 
     try {
-      final articles = await _repository.searchNews(query);
+      final newArticles = await _repository.searchNews(newQuery);
 
-      if (articles.isEmpty) {
-        _logger.info("No more result for ${query.keywords}");
+      if (newArticles.isEmpty) {
+        _logger.info("No more result for ${newQuery.keywords}");
         state = SearchState.loaded(
-          query: query,
-          articles: state.articles,
-          canLoadNextPage: false,
+          query: newQuery,
+          articles: articles,
+          nextPageState: const NextPageState.noMorePage(),
         );
       } else {
-        _logger.info("Found ${articles.length} articles for ${query.keywords}");
+        _logger.info("Found ${articles.length} articles for ${newQuery.keywords}");
         state = SearchState.loaded(
-          query: query,
-          articles: state.articles + articles,
+          query: newQuery,
+          articles: articles + newArticles,
         );
       }
     } on AppException catch (e) {
-      _logger.severe("Failed to load page ${query.page} for ${query.keywords}", e);
-      state = SearchState.failedOnNextPage(
-        query: query,
-        articles: state.articles,
-        exception: e,
+      _logger.severe("Failed to load page ${newQuery.page} for ${newQuery.keywords}", e);
+      state = SearchState.loaded(
+        query: newQuery,
+        articles: articles,
+        nextPageState: NextPageState.failed(e),
       );
     }
   }

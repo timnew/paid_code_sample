@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:paid_code_test/features/find_service.dart';
 import 'package:provider/provider.dart';
 
@@ -30,9 +31,11 @@ class _SearchScreenState extends State<SearchScreen> {
           appBar: AppBar(
             title: const Text("News Search"),
           ),
-          body: const _ScreenLayout(
-            searchField: SearchField(),
-            searchResult: SearchResult(),
+          body: _ScreenLayout(
+            searchField: const SearchField(),
+            searchResult: Observer(
+              builder: (_) => SearchResult(state: context.read<SearchStore>().state),
+            ),
           ),
         ),
       );

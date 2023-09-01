@@ -26,21 +26,29 @@ class SearchState with _$SearchState {
   const factory SearchState.loaded({
     required SearchQuery query,
     required List<ArticleEntry> articles,
-    @Default(true) bool canLoadNextPage,
+    @Default(NextPageState.hasMorePages()) NextPageState nextPageState,
   }) = _Loaded;
 
-  const factory SearchState.loadingNewPage({
-    required SearchQuery query,
-    required List<ArticleEntry> articles,
-  }) = _LoadingNextPage;
-
-  const factory SearchState.failedOnNextPage({
-    required SearchQuery query,
-    required List<ArticleEntry> articles,
-    required AppException exception,
-  }) = _FailedOnNextPage;
-
   SearchQuery get query => SearchQuery.empty;
+
   List<ArticleEntry> get articles => const [];
-  bool get canLoadNextPage => false;
+  NextPageState get nextPageState => const NextPageState.hasMorePages();
+
+  bool get isFailedOnFirstPage => this is _FailedOnFirstPage;
+  bool get isFailedOnNextPage => maybeWhen(
+        loaded: (_, __, nextPageState) => nextPageState is _FailedLoadNextPage,
+        orElse: () => false,
+      );
+}
+
+@freezed
+class NextPageState with _$NextPageState {
+  const NextPageState._();
+
+  const factory NextPageState.hasMorePages() = _HasMorePages;
+  const factory NextPageState.noMorePage() = _NoMorePage;
+  const factory NextPageState.loading() = _LoadingNextPage;
+  const factory NextPageState.failed(AppException exception) = _FailedLoadNextPage;
+
+  bool get hasMorePages => this is _HasMorePages;
 }
