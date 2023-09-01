@@ -12,18 +12,14 @@ class SliverSearchResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => state.when(
-        initial: () => const SliverToBoxAdapter(
-          child: _FullScreenMessage(
-            message: "Type keywords to trigger a search",
-          ),
+        initial: () => const _SliverTextMessage(
+          message: "Type keywords to trigger a search",
         ),
-        loadingFirstPage: (_) => const SliverToBoxAdapter(child: _FullScreenLoading()),
-        noResult: (query) => SliverToBoxAdapter(
-          child: _FullScreenMessage(
-            message: "No articles found about ${query.keywords}",
-          ),
+        loadingFirstPage: (_) => const _SliverLoading(),
+        noResult: (query) => _SliverTextMessage(
+          message: "No articles found about ${query.keywords}",
         ),
-        failedOnFirstPage: (query, exception) => SliverToBoxAdapter(
+        failedOnFirstPage: (query, exception) => SliverFillRemaining(
           child: AppExceptionWidget(
             exception: exception,
             onRetry: () => context.read<SearchStore>().retryFirstQuery(),
@@ -36,25 +32,29 @@ class SliverSearchResult extends StatelessWidget {
       );
 }
 
-class _FullScreenMessage extends StatelessWidget {
+class _SliverTextMessage extends StatelessWidget {
   final String message;
 
-  const _FullScreenMessage({required this.message});
+  const _SliverTextMessage({required this.message});
 
   @override
-  Widget build(BuildContext context) => Center(
-        child: Text(
-          message,
-          style: Theme.of(context).textTheme.bodyLarge,
+  Widget build(BuildContext context) => SliverFillRemaining(
+        child: Center(
+          child: Text(
+            message,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
         ),
       );
 }
 
-class _FullScreenLoading extends StatelessWidget {
-  const _FullScreenLoading();
+class _SliverLoading extends StatelessWidget {
+  const _SliverLoading();
 
   @override
-  Widget build(BuildContext context) => const Center(
-        child: CircularProgressIndicator(),
+  Widget build(BuildContext context) => const SliverFillRemaining(
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
       );
 }
