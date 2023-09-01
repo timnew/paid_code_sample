@@ -34,7 +34,7 @@ class _SearchScreenState extends State<SearchScreen> {
           body: _ScreenLayout(
             searchField: const SearchField(),
             searchResult: Observer(
-              builder: (_) => SearchResult(state: context.read<SearchStore>().state),
+              builder: (_) => SearchResult(state: _store.state),
             ),
           ),
         ),

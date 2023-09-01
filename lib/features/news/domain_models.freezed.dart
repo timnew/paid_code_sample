@@ -16,12 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ArticleEntry {
-  String get url => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   String get source => throw _privateConstructorUsedError;
-  DateTime get publishedAt => throw _privateConstructorUsedError;
+  DateTime? get publishedAt => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get summary => throw _privateConstructorUsedError;
 
@@ -37,12 +37,12 @@ abstract class $ArticleEntryCopyWith<$Res> {
       _$ArticleEntryCopyWithImpl<$Res, ArticleEntry>;
   @useResult
   $Res call(
-      {String url,
-      String imageUrl,
+      {String? url,
+      String? imageUrl,
       String title,
       String author,
       String source,
-      DateTime publishedAt,
+      DateTime? publishedAt,
       String description,
       String summary});
 }
@@ -60,24 +60,24 @@ class _$ArticleEntryCopyWithImpl<$Res, $Val extends ArticleEntry>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = null,
-    Object? imageUrl = null,
+    Object? url = freezed,
+    Object? imageUrl = freezed,
     Object? title = null,
     Object? author = null,
     Object? source = null,
-    Object? publishedAt = null,
+    Object? publishedAt = freezed,
     Object? description = null,
     Object? summary = null,
   }) {
     return _then(_value.copyWith(
-      url: null == url
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -90,10 +90,10 @@ class _$ArticleEntryCopyWithImpl<$Res, $Val extends ArticleEntry>
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
-      publishedAt: null == publishedAt
+      publishedAt: freezed == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -115,12 +115,12 @@ abstract class _$$_ArticleEntryCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String url,
-      String imageUrl,
+      {String? url,
+      String? imageUrl,
       String title,
       String author,
       String source,
-      DateTime publishedAt,
+      DateTime? publishedAt,
       String description,
       String summary});
 }
@@ -136,24 +136,24 @@ class __$$_ArticleEntryCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = null,
-    Object? imageUrl = null,
+    Object? url = freezed,
+    Object? imageUrl = freezed,
     Object? title = null,
     Object? author = null,
     Object? source = null,
-    Object? publishedAt = null,
+    Object? publishedAt = freezed,
     Object? description = null,
     Object? summary = null,
   }) {
     return _then(_$_ArticleEntry(
-      url: null == url
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -166,10 +166,10 @@ class __$$_ArticleEntryCopyWithImpl<$Res>
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
-      publishedAt: null == publishedAt
+      publishedAt: freezed == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -196,9 +196,9 @@ class _$_ArticleEntry implements _ArticleEntry {
       required this.summary});
 
   @override
-  final String url;
+  final String? url;
   @override
-  final String imageUrl;
+  final String? imageUrl;
   @override
   final String title;
   @override
@@ -206,7 +206,7 @@ class _$_ArticleEntry implements _ArticleEntry {
   @override
   final String source;
   @override
-  final DateTime publishedAt;
+  final DateTime? publishedAt;
   @override
   final String description;
   @override
@@ -248,19 +248,19 @@ class _$_ArticleEntry implements _ArticleEntry {
 
 abstract class _ArticleEntry implements ArticleEntry {
   const factory _ArticleEntry(
-      {required final String url,
-      required final String imageUrl,
+      {required final String? url,
+      required final String? imageUrl,
       required final String title,
       required final String author,
       required final String source,
-      required final DateTime publishedAt,
+      required final DateTime? publishedAt,
       required final String description,
       required final String summary}) = _$_ArticleEntry;
 
   @override
-  String get url;
+  String? get url;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
   String get title;
   @override
@@ -268,7 +268,7 @@ abstract class _ArticleEntry implements ArticleEntry {
   @override
   String get source;
   @override
-  DateTime get publishedAt;
+  DateTime? get publishedAt;
   @override
   String get description;
   @override

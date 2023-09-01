@@ -37,7 +37,7 @@ class AppExceptionWidget extends StatelessWidget {
                 onPressed: onRetry,
                 child: const Text("Retry"),
               ),
-            ]
+            ],
           ],
         ),
       );

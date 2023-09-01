@@ -436,14 +436,14 @@ NewsSearchArticle _$NewsSearchArticleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$NewsSearchArticle {
-  NewsSearchArticleSource get source => throw _privateConstructorUsedError;
-  String get author => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
-  String get urlToImage => throw _privateConstructorUsedError;
-  String get publishedAt => throw _privateConstructorUsedError;
-  String get content => throw _privateConstructorUsedError;
+  NewsSearchArticleSource? get source => throw _privateConstructorUsedError;
+  String? get author => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+  String? get urlToImage => throw _privateConstructorUsedError;
+  String? get publishedAt => throw _privateConstructorUsedError;
+  String? get content => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -458,16 +458,16 @@ abstract class $NewsSearchArticleCopyWith<$Res> {
       _$NewsSearchArticleCopyWithImpl<$Res, NewsSearchArticle>;
   @useResult
   $Res call(
-      {NewsSearchArticleSource source,
-      String author,
-      String title,
-      String description,
-      String url,
-      String urlToImage,
-      String publishedAt,
-      String content});
+      {NewsSearchArticleSource? source,
+      String? author,
+      String? title,
+      String? description,
+      String? url,
+      String? urlToImage,
+      String? publishedAt,
+      String? content});
 
-  $NewsSearchArticleSourceCopyWith<$Res> get source;
+  $NewsSearchArticleSourceCopyWith<$Res>? get source;
 }
 
 /// @nodoc
@@ -483,55 +483,59 @@ class _$NewsSearchArticleCopyWithImpl<$Res, $Val extends NewsSearchArticle>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? source = null,
-    Object? author = null,
-    Object? title = null,
-    Object? description = null,
-    Object? url = null,
-    Object? urlToImage = null,
-    Object? publishedAt = null,
-    Object? content = null,
+    Object? source = freezed,
+    Object? author = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? url = freezed,
+    Object? urlToImage = freezed,
+    Object? publishedAt = freezed,
+    Object? content = freezed,
   }) {
     return _then(_value.copyWith(
-      source: null == source
+      source: freezed == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as NewsSearchArticleSource,
-      author: null == author
+              as NewsSearchArticleSource?,
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
+              as String?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
+              as String?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
+              as String?,
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      urlToImage: null == urlToImage
+              as String?,
+      urlToImage: freezed == urlToImage
           ? _value.urlToImage
           : urlToImage // ignore: cast_nullable_to_non_nullable
-              as String,
-      publishedAt: null == publishedAt
+              as String?,
+      publishedAt: freezed == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
+              as String?,
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $NewsSearchArticleSourceCopyWith<$Res> get source {
-    return $NewsSearchArticleSourceCopyWith<$Res>(_value.source, (value) {
+  $NewsSearchArticleSourceCopyWith<$Res>? get source {
+    if (_value.source == null) {
+      return null;
+    }
+
+    return $NewsSearchArticleSourceCopyWith<$Res>(_value.source!, (value) {
       return _then(_value.copyWith(source: value) as $Val);
     });
   }
@@ -546,17 +550,17 @@ abstract class _$$_NewsSearchArticleCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {NewsSearchArticleSource source,
-      String author,
-      String title,
-      String description,
-      String url,
-      String urlToImage,
-      String publishedAt,
-      String content});
+      {NewsSearchArticleSource? source,
+      String? author,
+      String? title,
+      String? description,
+      String? url,
+      String? urlToImage,
+      String? publishedAt,
+      String? content});
 
   @override
-  $NewsSearchArticleSourceCopyWith<$Res> get source;
+  $NewsSearchArticleSourceCopyWith<$Res>? get source;
 }
 
 /// @nodoc
@@ -570,48 +574,48 @@ class __$$_NewsSearchArticleCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? source = null,
-    Object? author = null,
-    Object? title = null,
-    Object? description = null,
-    Object? url = null,
-    Object? urlToImage = null,
-    Object? publishedAt = null,
-    Object? content = null,
+    Object? source = freezed,
+    Object? author = freezed,
+    Object? title = freezed,
+    Object? description = freezed,
+    Object? url = freezed,
+    Object? urlToImage = freezed,
+    Object? publishedAt = freezed,
+    Object? content = freezed,
   }) {
     return _then(_$_NewsSearchArticle(
-      source: null == source
+      source: freezed == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as NewsSearchArticleSource,
-      author: null == author
+              as NewsSearchArticleSource?,
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
+              as String?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
+              as String?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
+              as String?,
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      urlToImage: null == urlToImage
+              as String?,
+      urlToImage: freezed == urlToImage
           ? _value.urlToImage
           : urlToImage // ignore: cast_nullable_to_non_nullable
-              as String,
-      publishedAt: null == publishedAt
+              as String?,
+      publishedAt: freezed == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
+              as String?,
+      content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -634,21 +638,21 @@ class _$_NewsSearchArticle extends _NewsSearchArticle {
       _$$_NewsSearchArticleFromJson(json);
 
   @override
-  final NewsSearchArticleSource source;
+  final NewsSearchArticleSource? source;
   @override
-  final String author;
+  final String? author;
   @override
-  final String title;
+  final String? title;
   @override
-  final String description;
+  final String? description;
   @override
-  final String url;
+  final String? url;
   @override
-  final String urlToImage;
+  final String? urlToImage;
   @override
-  final String publishedAt;
+  final String? publishedAt;
   @override
-  final String content;
+  final String? content;
 
   @override
   String toString() {
@@ -695,35 +699,35 @@ class _$_NewsSearchArticle extends _NewsSearchArticle {
 
 abstract class _NewsSearchArticle extends NewsSearchArticle {
   const factory _NewsSearchArticle(
-      {required final NewsSearchArticleSource source,
-      required final String author,
-      required final String title,
-      required final String description,
-      required final String url,
-      required final String urlToImage,
-      required final String publishedAt,
-      required final String content}) = _$_NewsSearchArticle;
+      {required final NewsSearchArticleSource? source,
+      required final String? author,
+      required final String? title,
+      required final String? description,
+      required final String? url,
+      required final String? urlToImage,
+      required final String? publishedAt,
+      required final String? content}) = _$_NewsSearchArticle;
   const _NewsSearchArticle._() : super._();
 
   factory _NewsSearchArticle.fromJson(Map<String, dynamic> json) =
       _$_NewsSearchArticle.fromJson;
 
   @override
-  NewsSearchArticleSource get source;
+  NewsSearchArticleSource? get source;
   @override
-  String get author;
+  String? get author;
   @override
-  String get title;
+  String? get title;
   @override
-  String get description;
+  String? get description;
   @override
-  String get url;
+  String? get url;
   @override
-  String get urlToImage;
+  String? get urlToImage;
   @override
-  String get publishedAt;
+  String? get publishedAt;
   @override
-  String get content;
+  String? get content;
   @override
   @JsonKey(ignore: true)
   _$$_NewsSearchArticleCopyWith<_$_NewsSearchArticle> get copyWith =>
@@ -737,8 +741,8 @@ NewsSearchArticleSource _$NewsSearchArticleSourceFromJson(
 
 /// @nodoc
 mixin _$NewsSearchArticleSource {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -752,7 +756,7 @@ abstract class $NewsSearchArticleSourceCopyWith<$Res> {
           $Res Function(NewsSearchArticleSource) then) =
       _$NewsSearchArticleSourceCopyWithImpl<$Res, NewsSearchArticleSource>;
   @useResult
-  $Res call({String id, String name});
+  $Res call({String? id, String? name});
 }
 
 /// @nodoc
@@ -769,18 +773,18 @@ class _$NewsSearchArticleSourceCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
+    Object? id = freezed,
+    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -793,7 +797,7 @@ abstract class _$$_NewsSearchArticleSourceCopyWith<$Res>
       __$$_NewsSearchArticleSourceCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name});
+  $Res call({String? id, String? name});
 }
 
 /// @nodoc
@@ -808,18 +812,18 @@ class __$$_NewsSearchArticleSourceCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
+    Object? id = freezed,
+    Object? name = freezed,
   }) {
     return _then(_$_NewsSearchArticleSource(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -833,9 +837,9 @@ class _$_NewsSearchArticleSource implements _NewsSearchArticleSource {
       _$$_NewsSearchArticleSourceFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
-  final String name;
+  final String? name;
 
   @override
   String toString() {
@@ -873,16 +877,16 @@ class _$_NewsSearchArticleSource implements _NewsSearchArticleSource {
 
 abstract class _NewsSearchArticleSource implements NewsSearchArticleSource {
   const factory _NewsSearchArticleSource(
-      {required final String id,
-      required final String name}) = _$_NewsSearchArticleSource;
+      {required final String? id,
+      required final String? name}) = _$_NewsSearchArticleSource;
 
   factory _NewsSearchArticleSource.fromJson(Map<String, dynamic> json) =
       _$_NewsSearchArticleSource.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
-  String get name;
+  String? get name;
   @override
   @JsonKey(ignore: true)
   _$$_NewsSearchArticleSourceCopyWith<_$_NewsSearchArticleSource>

@@ -34,15 +34,17 @@ Map<String, dynamic> _$$_ErrorToJson(_$_Error instance) => <String, dynamic>{
 
 _$_NewsSearchArticle _$$_NewsSearchArticleFromJson(Map<String, dynamic> json) =>
     _$_NewsSearchArticle(
-      source: NewsSearchArticleSource.fromJson(
-          json['source'] as Map<String, dynamic>),
-      author: json['author'] as String,
-      title: json['title'] as String,
-      description: json['description'] as String,
-      url: json['url'] as String,
-      urlToImage: json['urlToImage'] as String,
-      publishedAt: json['publishedAt'] as String,
-      content: json['content'] as String,
+      source: json['source'] == null
+          ? null
+          : NewsSearchArticleSource.fromJson(
+              json['source'] as Map<String, dynamic>),
+      author: json['author'] as String?,
+      title: json['title'] as String?,
+      description: json['description'] as String?,
+      url: json['url'] as String?,
+      urlToImage: json['urlToImage'] as String?,
+      publishedAt: json['publishedAt'] as String?,
+      content: json['content'] as String?,
     );
 
 Map<String, dynamic> _$$_NewsSearchArticleToJson(
@@ -61,8 +63,8 @@ Map<String, dynamic> _$$_NewsSearchArticleToJson(
 _$_NewsSearchArticleSource _$$_NewsSearchArticleSourceFromJson(
         Map<String, dynamic> json) =>
     _$_NewsSearchArticleSource(
-      id: json['id'] as String,
-      name: json['name'] as String,
+      id: json['id'] as String?,
+      name: json['name'] as String?,
     );
 
 Map<String, dynamic> _$$_NewsSearchArticleSourceToJson(

@@ -1,4 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:logging/logging.dart';
 import 'package:mobx/mobx.dart';
 import 'package:paid_code_test/app/search/search_state.dart';

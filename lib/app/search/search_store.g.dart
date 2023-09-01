@@ -32,12 +32,53 @@ mixin _$SearchStore on _SearchStore, Store {
     return _$searchAsyncAction.run(() => super.search(keywords));
   }
 
-  late final _$loadNextPageAsyncAction =
-      AsyncAction('_SearchStore.loadNextPage', context: context);
+  late final _$retryFirstQueryAsyncAction =
+      AsyncAction('_SearchStore.retryFirstQuery', context: context);
+
+  @override
+  Future<void> retryFirstQuery() {
+    return _$retryFirstQueryAsyncAction.run(() => super.retryFirstQuery());
+  }
+
+  late final _$executeFirstQueryAsyncAction =
+      AsyncAction('_SearchStore.executeFirstQuery', context: context);
+
+  @override
+  Future<void> executeFirstQuery(SearchQuery query) {
+    return _$executeFirstQueryAsyncAction
+        .run(() => super.executeFirstQuery(query));
+  }
+
+  late final _$retryLoadNextPageAsyncAction =
+      AsyncAction('_SearchStore.retryLoadNextPage', context: context);
+
+  @override
+  Future<void> retryLoadNextPage() {
+    return _$retryLoadNextPageAsyncAction.run(() => super.retryLoadNextPage());
+  }
+
+  late final _$executeNextPageQueryAsyncAction =
+      AsyncAction('_SearchStore.executeNextPageQuery', context: context);
+
+  @override
+  Future<void> executeNextPageQuery(
+      SearchQuery newQuery, List<ArticleEntry> articles) {
+    return _$executeNextPageQueryAsyncAction
+        .run(() => super.executeNextPageQuery(newQuery, articles));
+  }
+
+  late final _$_SearchStoreActionController =
+      ActionController(name: '_SearchStore', context: context);
 
   @override
   Future<void> loadNextPage() {
-    return _$loadNextPageAsyncAction.run(() => super.loadNextPage());
+    final _$actionInfo = _$_SearchStoreActionController.startAction(
+        name: '_SearchStore.loadNextPage');
+    try {
+      return super.loadNextPage();
+    } finally {
+      _$_SearchStoreActionController.endAction(_$actionInfo);
+    }
   }
 
   @override

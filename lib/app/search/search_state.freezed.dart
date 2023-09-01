@@ -834,7 +834,7 @@ class _$_Loaded extends _Loaded {
   const _$_Loaded(
       {required this.query,
       required final List<ArticleEntry> articles,
-      this.nextPageState = const NextPageState.hasMorePage()})
+      this.nextPageState = const NextPageState.hasMorePages()})
       : _articles = articles,
         super._();
 
