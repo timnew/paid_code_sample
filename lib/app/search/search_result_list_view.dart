@@ -75,13 +75,32 @@ class _LoadingNextPageError extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Group(
-        children: [
-          Text(exception.toString()),
-          TextButton(
-            onPressed: () => context.read<SearchStore>().retryLoadNextPage(),
-            child: const Text('Retry'),
+  Widget build(BuildContext context) => Card(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+          child: Group(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.error,
+                    color: Theme.of(context).colorScheme.error,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    exception.message,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ],
+              ),
+              if (exception.canRetry)
+                TextButton(
+                  onPressed: () => context.read<SearchStore>().retryLoadNextPage(),
+                  child: const Text('Retry'),
+                ),
+            ],
           ),
-        ],
+        ),
       );
 }

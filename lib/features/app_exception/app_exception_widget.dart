@@ -17,14 +17,15 @@ class AppExceptionWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
+            Icon(
               Icons.error,
               size: 48,
+              color: Theme.of(context).colorScheme.error,
             ),
             const SizedBox(height: 16),
             Text(
-              "An error occurred",
-              style: Theme.of(context).textTheme.headlineMedium,
+              "Something went wrong",
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: 16),
             Text(
