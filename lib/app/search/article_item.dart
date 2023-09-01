@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:paid_code_test/features/news.dart';
 import 'package:paid_code_test/features/relative_date_time.dart';
 import 'package:paid_code_test/features/widgets.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ArticleItem extends StatelessWidget {
   final ArticleEntry article;
@@ -15,7 +16,7 @@ class ArticleItem extends StatelessWidget {
   Widget build(BuildContext context) => Card(
         clipBehavior: Clip.hardEdge,
         child: InkWell(
-          onTap: () {},
+          onTap: article.url != null ? () => _openArticle(context) : null,
           child: Group(
             children: [
               if (article.imageUrl != null) CachedNetworkImage(imageUrl: article.imageUrl!),
@@ -42,6 +43,22 @@ class ArticleItem extends StatelessWidget {
           ),
         ),
       );
+
+  Future<void> _openArticle(BuildContext context) async {
+    final messenger = ScaffoldMessenger.of(context);
+
+    final url = article.url!;
+
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    } else {
+      messenger.showSnackBar(
+        const SnackBar(
+          content: Text('Could not open article'),
+        ),
+      );
+    }
+  }
 }
 
 class _MetaInfo extends StatelessWidget {

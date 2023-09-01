@@ -38,9 +38,12 @@ class _LoadMoreButton extends StatelessWidget {
   const _LoadMoreButton();
 
   @override
-  Widget build(BuildContext context) => TextButton(
-        onPressed: () => context.read<SearchStore>().loadNextPage(),
-        child: const Text('Load More'),
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: TextButton(
+          onPressed: () => context.read<SearchStore>().loadNextPage(),
+          child: const Text('Load More'),
+        ),
       );
 }
 
@@ -48,14 +51,20 @@ class _NoMorePageMessage extends StatelessWidget {
   const _NoMorePageMessage();
 
   @override
-  Widget build(BuildContext context) => const Text("No more content");
+  Widget build(BuildContext context) => const Padding(
+        padding: EdgeInsets.all(16),
+        child: Text("No more content"),
+      );
 }
 
 class _LoadingNextPageIndicator extends StatelessWidget {
   const _LoadingNextPageIndicator();
 
   @override
-  Widget build(BuildContext context) => const Center(child: CircularProgressIndicator());
+  Widget build(BuildContext context) => const Padding(
+        padding: EdgeInsets.symmetric(vertical: 16),
+        child: Center(child: CircularProgressIndicator()),
+      );
 }
 
 class _LoadingNextPageError extends StatelessWidget {

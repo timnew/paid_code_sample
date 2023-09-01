@@ -51,14 +51,18 @@ class _ScreenLayout extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          children: [
-            searchField,
-            const SizedBox(height: 16),
-            Expanded(child: searchResult),
-          ],
-        ),
+  Widget build(BuildContext context) => Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            child: searchField,
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: searchResult,
+            ),
+          ),
+        ],
       );
 }
