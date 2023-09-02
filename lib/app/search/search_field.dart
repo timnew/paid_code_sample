@@ -4,10 +4,18 @@ import 'package:provider/provider.dart';
 import 'search_store.dart';
 
 class SearchField extends StatelessWidget {
-  const SearchField();
+  final FocusNode focusNode;
+  final TextEditingController controller;
+
+  const SearchField({
+    required this.focusNode,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) => TextField(
+        focusNode: focusNode,
+        controller: controller,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
           prefixIcon: const Icon(Icons.search),

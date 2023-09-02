@@ -16,6 +16,8 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   late final SearchStore _store;
+  final searchFocusNode = FocusNode();
+  final searchController = TextEditingController();
 
   @override
   void initState() {
@@ -28,7 +30,10 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) => Provider.value(
         value: _store,
         child: _ScreenLayout(
-          searchField: const SearchField(),
+          searchField: SearchField(
+            focusNode: searchFocusNode,
+            controller: searchController,
+          ),
           sliverSearchResult: Observer(
             builder: (_) => SliverSearchResult(state: _store.state),
           ),
