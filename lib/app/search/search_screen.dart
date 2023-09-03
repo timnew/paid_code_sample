@@ -55,7 +55,13 @@ class _ScreenLayout extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              title: const Text('News Search'),
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.asset(
+                  'assets/images/background.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              expandedHeight: 180,
               floating: true,
               snap: true,
               bottom: PreferredSize(
