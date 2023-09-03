@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:input_history_text_field/input_history_text_field.dart';
 import 'package:provider/provider.dart';
 
 import 'search_store.dart';
@@ -13,9 +14,10 @@ class SearchField extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => TextField(
+  Widget build(BuildContext context) => InputHistoryTextField(
+        historyKey: 'query',
         focusNode: focusNode,
-        controller: controller,
+        textEditingController: controller,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
           prefixIcon: const Icon(Icons.search),
